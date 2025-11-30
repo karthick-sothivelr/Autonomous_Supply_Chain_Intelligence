@@ -37,7 +37,8 @@ In the demonstration scenario, we simulate a critical stockout event for "Oat Ba
 4.  **The Action:** The Procurement Agent consults its long-term memory for price targets ($3.40) and identifies "Clark Distributing" as a potential vendor. It initiates an **A2A handshake** over HTTP.
 5.  **The Negotiation:** The agent autonomously negotiates. It rejects the initial list price and counters with a 10% discount based on volume.
 6.  **The Result:** The vendor accepts the offer, and the deal is secured without human intervention.
-(Refer to the recorded video)
+
+Refer to the recorded video: [Click here to watch the video](https://www.youtube.com/watch?v=PIEEjxroJ-0)
 
 ## The Build
 VeganFlow was built using a modern, agent-native stack designed for production reliability:
