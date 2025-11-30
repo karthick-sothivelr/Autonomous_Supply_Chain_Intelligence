@@ -1,0 +1,21 @@
+# Core Agent Framework (Google)
+google-adk[a2a]>=0.1.3      # The ADK + Agent2Agent protocol support
+google-genai>=0.3.0         # Gemini SDK
+google-cloud-aiplatform     # Vertex AI (for Memory Bank)
+
+# Infrastructure & Networking (For A2A)
+uvicorn                     # ASGI Server to host the Vendor Agent
+fastapi                     # Framework for the A2A endpoints
+requests                    # For making HTTP calls between agents
+
+# Observability
+opentelemetry-api
+opentelemetry-sdk
+opentelemetry-exporter-gcp-trace
+opentelemetry-instrumentation-google-genai
+
+# Utilities
+python-dotenv               # To load API keys from .env
+pytest                      # For the Evaluation suite
+pytest-asyncio              # Async support for pytest
+chainlit

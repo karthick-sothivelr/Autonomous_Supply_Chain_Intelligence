@@ -1,0 +1,95 @@
+{
+  "eval_set_id": "veganflow_production_check",
+  "eval_cases": [
+    {
+      "eval_id": "inventory_delegation",
+      "conversation": [
+        {
+          "user_content": {
+            "parts": [
+              {
+                "text": "Check the stock level for Oat Barista Blend."
+              }
+            ]
+          },
+          "intermediate_data": {
+            "tool_uses": [
+              {
+                "name": "transfer_to_agent",
+                "args": {
+                  "agent_name": "shelf_monitor"
+                }
+              },
+              {
+                "name": "query_inventory",
+                "args": {
+                  "query_type": "PRODUCT_DETAIL",
+                  "product_name": "Oat Barista Blend"
+                }
+              }
+            ]
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "Oat Barista Blend is low in stock (12 units) compared to the target (100 units). The velocity is 15 units per day."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "eval_id": "procurement_delegation",
+      "conversation": [
+        {
+          "user_content": {
+            "parts": [
+              {
+                "text": "I need to buy more Oat Barista Blend. Who sells it?"
+              }
+            ]
+          },
+          "intermediate_data": {
+            "tool_uses": [
+              {
+                "name": "transfer_to_agent",
+                "args": {
+                  "agent_name": "procurement_negotiator"
+                }
+              },
+              {
+                "name": "get_vendor_options",
+                "args": {
+                  "product_name": "Oat Barista Blend"
+                }
+              },
+              {
+                "name": "load_memory",
+                "args": {
+                  "query": "What is the historical target price for Oat Barista Blend?"
+                }
+              },
+              {
+                "name": "negotiate_with_vendor",
+                "args": {
+                  "product": "Oat Barista Blend",
+                  "quantity": 100,
+                  "offer_price": 2.93,
+                  "vendor_endpoint": "http://localhost:8003"
+                }
+              }
+            ]
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "Alright, I've secured 100 units of Oat Barista Blend from Clark Distributing at $2.93 each. This is a great price, 10% below the cheapest list price we found."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
