@@ -7,6 +7,11 @@
 * **State Management:** Integration with a local SQLite database (`veganflow_store.db`) and long-term memory.
 * **Glass-Box Observability:** Detailed tracing of agent thoughts and tool execution.
 
+
+**Solution Architecture**
+
+![Alt text for Solution Architecture Diagram](SolutionArchitecture.png)
+
 ---
 
 ## 📋 Prerequisites
